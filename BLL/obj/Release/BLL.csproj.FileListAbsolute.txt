@@ -1,0 +1,3 @@
+/Users/aluno/Downloads/soluctionclinica-master/BLL/bin/Release/BLL.dll
+/Users/aluno/Downloads/soluctionclinica-master/BLL/obj/Release/BLL.csproj.CoreCompileInputs.cache
+/Users/aluno/Downloads/soluctionclinica-master/BLL/obj/Release/BLL.dll
