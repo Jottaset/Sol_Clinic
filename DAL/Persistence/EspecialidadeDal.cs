@@ -8,11 +8,12 @@ namespace DAL.Persistence
     public class EspecialidadeDal : Conexao
     {
 
+
         public void Salvar(Especialidade especialidade)
         {
             try
             {
-                AbrirConexao();
+
                 var sql = "INSERT INTO especialidade(descricao, dtCadastro)" +
                           "VALUES(@descricao, CURRENT_TIMESTAMP())";
 
@@ -23,11 +24,11 @@ namespace DAL.Persistence
             }
             catch (Exception erro)
             {
-                throw new Exception("Erro ao registrar dado da Especialidade" + erro.Message + erro.ToString());
+                throw new Exception("Erro ao registrar dado " + erro.Message + erro.ToString());
             }
             finally
             {
-                FecharConexao();
+
             }
         }
 
@@ -35,12 +36,12 @@ namespace DAL.Persistence
         {
             try
             {
-                AbrirConexao();
+
                 var sql = "SELECT * FROM especialidade";
                 command = new MySqlCommand(sql, connection);
                 dataReader = command.ExecuteReader();
 
-                List<Especialidade> listaEspecialidade = new List<Especialidade>();
+                List<Especialidade> listaespecialidade = new List<Especialidade>();
 
                 while (dataReader.Read())
                 {
@@ -48,23 +49,52 @@ namespace DAL.Persistence
 
                     especialidade.Id = Convert.ToInt32(dataReader["id"]);
                     especialidade.Descricao = dataReader["descricao"].ToString();
-                   
 
-                    listaEspecialidade.Add(especialidade);
 
+                    listaespecialidade.Add(especialidade);
                 }
-                return listaEspecialidade;
+
+                //listaespecialidade.Sort();
+
+                return listaespecialidade;
 
             }
             catch (Exception erro)
             {
-                throw new Exception("Erro ao listar Especialidades " + erro.Message + erro.ToString());
+                throw new Exception("Erro ao registrar dado " + erro.Message + erro.ToString());
             }
             finally
             {
-                FecharConexao();
+
             }
         }
+            public Especialidade PesquisarPorId(int id)
+            {
+                try
+                {
+                    var sql = "SELECT * FROM especialidade WHERE id = @id";
+                    command = new MySqlCommand(sql, connection);
+                    command.Parameters.AddWithValue("@id", id);
+                    dataReader = command.ExecuteReader();
+
+                    Especialidade especialidade = new Especialidade();
+
+                    if (dataReader.Read())
+                    {
+                        especialidade.Id = Convert.ToInt32(dataReader["id"]);
+                        especialidade.Descricao = dataReader["Descricao"].ToString();
+
+                    }
+                    return especialidade;
+                }
+                catch (Exception erro)
+                {
+                    throw new Exception("Erro ao consultar Especialidade " + erro.ToString());
+                }
+                finally
+                {
+                }
+            }
 
         public EspecialidadeDal()
         {

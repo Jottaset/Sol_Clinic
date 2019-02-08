@@ -32,9 +32,6 @@ namespace View.Pages
 
                 lblMensagem.Text = msg;
 
-                //Thread.Sleep(5000);
-
-                //Response.Redirect("/Pages/EspecialidadeCadastro.aspx");
 
             }
             catch (Exception erro)

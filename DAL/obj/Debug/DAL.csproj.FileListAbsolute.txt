@@ -20,3 +20,14 @@
 /Users/aluno/Downloads/soluctionclinica-master/DAL/obj/Debug/DAL.csproj.CopyComplete
 /Users/aluno/Downloads/soluctionclinica-master/DAL/obj/Debug/DAL.dll
 /Users/aluno/Downloads/soluctionclinica-master/DAL/obj/Debug/DAL.pdb
+/Users/aluno/Documents/soluctionclinica-master/DAL/bin/Debug/DAL.dll.config
+/Users/aluno/Documents/soluctionclinica-master/DAL/bin/Debug/DAL.dll
+/Users/aluno/Documents/soluctionclinica-master/DAL/bin/Debug/DAL.pdb
+/Users/aluno/Documents/soluctionclinica-master/DAL/bin/Debug/BLL.dll
+/Users/aluno/Documents/soluctionclinica-master/DAL/bin/Debug/MySql.Data.dll
+/Users/aluno/Documents/soluctionclinica-master/DAL/bin/Debug/BLL.pdb
+/Users/aluno/Documents/soluctionclinica-master/DAL/obj/Debug/DAL.csprojAssemblyReference.cache
+/Users/aluno/Documents/soluctionclinica-master/DAL/obj/Debug/DAL.csproj.CoreCompileInputs.cache
+/Users/aluno/Documents/soluctionclinica-master/DAL/obj/Debug/DAL.csproj.CopyComplete
+/Users/aluno/Documents/soluctionclinica-master/DAL/obj/Debug/DAL.dll
+/Users/aluno/Documents/soluctionclinica-master/DAL/obj/Debug/DAL.pdb

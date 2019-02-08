@@ -11,3 +11,12 @@
 /Users/aluno/Downloads/soluctionclinica-master/View/obj/Release/View.csproj.CopyComplete
 /Users/aluno/Downloads/soluctionclinica-master/View/obj/Release/View.dll
 /Users/aluno/Downloads/soluctionclinica-master/View/obj/Release/View.csprojAssemblyReference.cache
+/Users/aluno/Documents/soluctionclinica-master/View/obj/Release/View.csprojAssemblyReference.cache
+/Users/aluno/Documents/soluctionclinica-master/View/obj/Release/View.csproj.CoreCompileInputs.cache
+/Users/aluno/Documents/soluctionclinica-master/View/bin/View.dll
+/Users/aluno/Documents/soluctionclinica-master/View/bin/BLL.dll
+/Users/aluno/Documents/soluctionclinica-master/View/bin/DAL.dll
+/Users/aluno/Documents/soluctionclinica-master/View/bin/MySql.Data.dll
+/Users/aluno/Documents/soluctionclinica-master/View/bin/DAL.dll.config
+/Users/aluno/Documents/soluctionclinica-master/View/obj/Release/View.csproj.CopyComplete
+/Users/aluno/Documents/soluctionclinica-master/View/obj/Release/View.dll

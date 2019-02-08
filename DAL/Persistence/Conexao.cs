@@ -10,35 +10,42 @@ namespace DAL.Persistence
         protected MySqlDataReader dataReader;
         protected string connectionString;
 
-        protected void AbrirConexao(){
-            try{
+        protected void AbrirConexao()
+        {
+            try
+            {
 
                 string serverName = "localhost";
-                string userName   = "root";
-                string dbName     = "clinicasistema";
-                string port       = "3306";
-                string password   = "12345678";
+                string userName = "root";
+                string dbName = "clinicasistema";
+                string port = "3306";
+                string password = "12345678";
 
-                connectionString = "server=" + serverName 
-                                 + ";user=" + userName 
-                                 + ";database="+ dbName 
-                                 + ";port=" + port 
+                connectionString = "server=" + serverName
+                                 + ";user=" + userName
+                                 + ";database=" + dbName
+                                 + ";port=" + port
                                  + ";password=" + password + ";";
 
                 connection = new MySqlConnection(connectionString);
                 connection.Open();
 
 
-            }catch(Exception erro){
+            }
+            catch (Exception erro)
+            {
                 throw new Exception(erro.Message);
             }
         }
 
-        protected void FecharConexao(){
-            try{
+        protected void FecharConexao()
+        {
+            try
+            {
                 connection.Close();
             }
-            catch (Exception erro){
+            catch (Exception erro)
+            {
                 throw new Exception(erro.Message);
             }
 
@@ -46,6 +53,14 @@ namespace DAL.Persistence
 
         public Conexao()
         {
+            AbrirConexao();
         }
+
+        ~Conexao()
+        {
+            FecharConexao();
+        }
+
+
     }
 }

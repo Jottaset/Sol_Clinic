@@ -12,13 +12,15 @@ namespace DAL.Persistence
         {
             try
             {
-                AbrirConexao();
-                var sql = "INSERT INTO medico(idEspecialidade, nome, dtCadastro)" +
-                          "VALUES(@idEspecialidade, @nome, CURRENT_TIMESTAMP())";
+
+                var sql = "INSERT INTO medico(nome, idEspecialidade, crm, dtCadastro)" +
+                          "VALUES(@nome, @idEspecialidade, @crm, CURRENT_TIMESTAMP())";
 
                 command = new MySqlCommand(sql, connection);
-                command.Parameters.AddWithValue("@idEspecialidade", medico.IdEspecialidade);
                 command.Parameters.AddWithValue("@nome", medico.Nome);
+                command.Parameters.AddWithValue("@idEspecialidade", medico.IdEspecialidade);
+                //command.Parameters.AddWithValue("@crm", medico.Crm);
+
                 command.ExecuteNonQuery();
             }
             catch (Exception erro)
@@ -27,7 +29,7 @@ namespace DAL.Persistence
             }
             finally
             {
-                FecharConexao();
+
             }
         }
 
@@ -35,7 +37,7 @@ namespace DAL.Persistence
         {
             try
             {
-                AbrirConexao();
+
                 var sql = "SELECT * FROM medico";
                 command = new MySqlCommand(sql, connection);
                 dataReader = command.ExecuteReader();
@@ -48,21 +50,23 @@ namespace DAL.Persistence
 
                     medico.Id = Convert.ToInt32(dataReader["id"]);
                     medico.Nome = dataReader["nome"].ToString();
-                    medico.DtCadastro = dataReader["dtCadastro"].ToString();
+
 
                     listaMedico.Add(medico);
-
                 }
+
+                //listaMedico.Sort();
+
                 return listaMedico;
 
             }
             catch (Exception erro)
             {
-                throw new Exception("Erro ao registrar dado do Medico" + erro.Message + erro.ToString());
+                throw new Exception("Erro ao registrar dado " + erro.Message + erro.ToString());
             }
             finally
             {
-                FecharConexao();
+
             }
         }
 

@@ -12,7 +12,7 @@ namespace DAL.Persistence
         {
             try
             {
-                AbrirConexao();
+               
                 var sql = "INSERT INTO paciente(idCidade, nome, dtCadastro)" +
                           "VALUES(@idCidade, @nome, CURRENT_TIMESTAMP())";
 
@@ -27,7 +27,7 @@ namespace DAL.Persistence
             }
             finally
             {
-                FecharConexao();
+
             }
         }
 
@@ -35,7 +35,7 @@ namespace DAL.Persistence
         {
             try
             {
-                AbrirConexao();
+               
                 var sql = "SELECT * FROM paciente";
                 command = new MySqlCommand(sql, connection);
                 dataReader = command.ExecuteReader();
@@ -62,7 +62,7 @@ namespace DAL.Persistence
             }
             finally
             {
-                FecharConexao();
+
             }
         }
 

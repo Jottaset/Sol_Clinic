@@ -8,3 +8,9 @@
 /Users/aluno/Downloads/soluctionclinica-master/BLL/obj/Debug/BLL.csproj.CoreCompileInputs.cache
 /Users/aluno/Downloads/soluctionclinica-master/BLL/obj/Debug/BLL.dll
 /Users/aluno/Downloads/soluctionclinica-master/BLL/obj/Debug/BLL.pdb
+/Users/aluno/Documents/soluctionclinica-master/BLL/bin/Debug/BLL.dll
+/Users/aluno/Documents/soluctionclinica-master/BLL/bin/Debug/BLL.pdb
+/Users/aluno/Documents/soluctionclinica-master/BLL/obj/Debug/BLL.csproj.CoreCompileInputs.cache
+/Users/aluno/Documents/soluctionclinica-master/BLL/obj/Debug/BLL.dll
+/Users/aluno/Documents/soluctionclinica-master/BLL/obj/Debug/BLL.pdb
+/Users/aluno/Documents/soluctionclinica-master/BLL/obj/Debug/BLL.csprojAssemblyReference.cache

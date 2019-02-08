@@ -39,6 +39,7 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
@@ -63,6 +64,11 @@
     <Content Include="Pages\EspecialidadeCadastro.aspx" />
     <Content Include="Pages\MedicoCadastro.aspx" />
     <Content Include="Pages\PacienteCadastro.aspx" />
+    <Content Include="Pages\EstadoLista.aspx" />
+    <Content Include="Pages\EspecialidadeLista.aspx" />
+    <Content Include="Pages\EstadoPesquisa.aspx" />
+    <Content Include="Pages\EspecialidadePesquisa.aspx" />
+    <Content Include="Pages\CidadeLista.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -103,6 +109,36 @@
     </Compile>
     <Compile Include="Pages\PacienteCadastro.aspx.designer.cs">
       <DependentUpon>PacienteCadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EstadoLista.aspx.cs">
+      <DependentUpon>EstadoLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EstadoLista.aspx.designer.cs">
+      <DependentUpon>EstadoLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EspecialidadeLista.aspx.cs">
+      <DependentUpon>EspecialidadeLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EspecialidadeLista.aspx.designer.cs">
+      <DependentUpon>EspecialidadeLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EstadoPesquisa.aspx.cs">
+      <DependentUpon>EstadoPesquisa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EstadoPesquisa.aspx.designer.cs">
+      <DependentUpon>EstadoPesquisa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EspecialidadePesquisa.aspx.cs">
+      <DependentUpon>EspecialidadePesquisa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EspecialidadePesquisa.aspx.designer.cs">
+      <DependentUpon>EspecialidadePesquisa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CidadeLista.aspx.cs">
+      <DependentUpon>CidadeLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CidadeLista.aspx.designer.cs">
+      <DependentUpon>CidadeLista.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

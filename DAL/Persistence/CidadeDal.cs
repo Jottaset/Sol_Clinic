@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using BLL.Model;
 using System.Collections.Generic;
+using System.Data;
 
 namespace DAL.Persistence
 {
@@ -12,22 +13,76 @@ namespace DAL.Persistence
         {
             try
             {
-                AbrirConexao();
-                var sql = "INSERT INTO cidade(idEstado, descricao, dtCadastro)" +
-                          "VALUES(@idEstado, @descricao, CURRENT_TIMESTAMP())";
+
+                var sql = "INSERT INTO cidade(descricao, dtCadastro)" +
+                          "VALUES(@descricao, CURRENT_TIMESTAMP())";
 
                 command = new MySqlCommand(sql, connection);
-                command.Parameters.AddWithValue("@idEstado", cidade.IdEstado);
                 command.Parameters.AddWithValue("@descricao", cidade.Descricao);
+
                 command.ExecuteNonQuery();
             }
             catch (Exception erro)
             {
-                throw new Exception("Erro ao registrar dado da Cidade " + erro.Message + erro.ToString());
+                throw new Exception("Erro ao registrar dado " + erro.ToString());
             }
             finally
             {
-                FecharConexao();
+
+            }
+        }
+
+
+        public DataTable ListarPorNome(string Descricao)
+        {
+            try
+            {
+
+                var sql = "SELECT * FROM cidade WHERE Descricao LIKE '%" + Descricao + "%' ";
+                command = new MySqlCommand(sql, connection);
+                dataReader = command.ExecuteReader();
+
+                List<Cidade> listaCidade = new List<Cidade>();
+                List<Estado> listaEstado = new List<Estado>();
+
+                while (dataReader.Read())
+                {
+                    Cidade cidade = new Cidade();
+                    EstadoDal estadoDal = new EstadoDal();
+
+                    cidade.Id = Convert.ToInt32(dataReader["id"]);
+                    cidade.IdEstado = Convert.ToInt32(dataReader["idEstado"]);
+                    cidade.Estado = estadoDal.PesquisarPorId(cidade.IdEstado);
+                    cidade.Descricao = dataReader["Descricao"].ToString();
+
+                    listaCidade.Add(cidade);
+
+                }
+
+                DataTable dataTable = new DataTable();
+
+                dataTable.Columns.Add("idCidade");
+                dataTable.Columns.Add("cidade");
+                dataTable.Columns.Add("estado");
+                dataTable.Columns.Add("siglaEstado");
+
+                foreach(var cidade in listaCidade)
+                {
+
+                    dataTable.Rows.Add(cidade.Id, cidade.Descricao, cidade.Estado.Nome, cidade.Estado.Sigla);
+
+                }
+
+                return dataTable;
+
+            }
+            catch (Exception erro)
+            {
+                throw new Exception("Erro ao registrar dado " + erro.Message + erro.ToString());
+            }
+            finally
+            {
+
             }
         }
 
@@ -35,7 +90,7 @@ namespace DAL.Persistence
         {
             try
             {
-                AbrirConexao();
+
                 var sql = "SELECT * FROM cidade";
                 command = new MySqlCommand(sql, connection);
                 dataReader = command.ExecuteReader();
@@ -48,7 +103,7 @@ namespace DAL.Persistence
 
                     cidade.Id = Convert.ToInt32(dataReader["id"]);
                     cidade.Descricao = dataReader["descricao"].ToString();
-                    cidade.DtCadastro = dataReader["dtCadastro"].ToString();
+                    //cidade.DtCadastro = dataReader["dtCadastro"].ToString();
 
                     listaCidade.Add(cidade);
 
@@ -58,11 +113,39 @@ namespace DAL.Persistence
             }
             catch (Exception erro)
             {
-                throw new Exception("Erro ao listar Cidades" + erro.Message + erro.ToString());
+                throw new Exception("Erro ao registrar dado " + erro.Message + erro.ToString());
             }
             finally
             {
-                FecharConexao();
+
+            }
+        }
+
+            public Cidade PesquisarPorId(int id)
+            {
+            try
+            {
+                var sql = "SELECT * FROM cidade WHERE id = @id";
+                command = new MySqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@id", id);
+                dataReader = command.ExecuteReader();
+
+                Cidade cidade = new Cidade();
+
+                if (dataReader.Read())
+                {
+                    cidade.Id = Convert.ToInt32(dataReader["id"]);
+                    cidade.Descricao = dataReader["Descricao"].ToString();
+
+                }
+                return cidade;
+            }
+            catch (Exception erro)
+            {
+                throw new Exception("Erro ao consultar Cidade " + erro.ToString());
+            }
+            finally
+            {
             }
         }
 

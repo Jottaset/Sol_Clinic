@@ -35,9 +35,11 @@ namespace View.Pages
                 string msg = "Cidade " + cidade.Descricao +
                              ", Cadastrada com Sucesso,";             
 
+                lblMensagem.Text = msg;
                 lblMensagem.Attributes.CssStyle.Add("color", "green");
 
-                lblMensagem.Text = msg;
+                Response.Redirect("/Pages/CidadeCadastro.aspx");
+
 
 
             }
@@ -53,6 +55,8 @@ namespace View.Pages
             List<Estado> listaEstado = new List<Estado>();
 
             listaEstado = estadoDal.Listar();
+            //idEstado.Items.Clear();
+            //idEstado.ClearSelection();
 
             foreach(var estado in listaEstado)
             {
