@@ -5,4 +5,3 @@
 /Users/aluno/Documents/soluctionclinica-master/BLL/bin/Release/BLL.dll
 /Users/aluno/Documents/soluctionclinica-master/BLL/obj/Release/BLL.csproj.CoreCompileInputs.cache
 /Users/aluno/Documents/soluctionclinica-master/BLL/obj/Release/BLL.dll
-/Users/aluno/Documents/soluctionclinica-master/BLL/obj/Release/BLL.csprojAssemblyReference.cache

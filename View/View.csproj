@@ -69,6 +69,8 @@
     <Content Include="Pages\EstadoPesquisa.aspx" />
     <Content Include="Pages\EspecialidadePesquisa.aspx" />
     <Content Include="Pages\CidadeLista.aspx" />
+    <Content Include="Pages\MedicoLista.aspx" />
+    <Content Include="Pages\PacienteLista.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -139,6 +141,18 @@
     </Compile>
     <Compile Include="Pages\CidadeLista.aspx.designer.cs">
       <DependentUpon>CidadeLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MedicoLista.aspx.cs">
+      <DependentUpon>MedicoLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MedicoLista.aspx.designer.cs">
+      <DependentUpon>MedicoLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PacienteLista.aspx.cs">
+      <DependentUpon>PacienteLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PacienteLista.aspx.designer.cs">
+      <DependentUpon>PacienteLista.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

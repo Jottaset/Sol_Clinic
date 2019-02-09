@@ -24,20 +24,23 @@ namespace View.Pages
             {
                 Medico medico = new Medico();
                 medico.Nome = nome.Text;
+                medico.Crm = crm.Text;
                 medico.IdEspecialidade = Int32.Parse(idEspecialidade.SelectedValue);
 
                 MedicoDal medicoDal = new MedicoDal();
                 medicoDal.Salvar(medico);
 
                 nome.Text = "";
+                crm.Text = "";
                 idEspecialidade.Text = "";
 
                 string msg = "Medico " + medico.Nome +
                              ", Cadastrado com Sucesso,";
 
                 lblMensagem.Attributes.CssStyle.Add("color", "green");
-
                 lblMensagem.Text = msg;
+
+                Response.Redirect("/Pages/MedicoCadastro.aspx");
 
 
             }

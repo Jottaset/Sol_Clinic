@@ -17,6 +17,8 @@ namespace View.Pages {
 		
 		protected System.Web.UI.WebControls.TextBox nome;
 		
+		protected System.Web.UI.WebControls.TextBox crm;
+		
 		protected System.Web.UI.WebControls.DropDownList idEspecialidade;
 		
 		protected System.Web.UI.WebControls.Button btnCadastrar;

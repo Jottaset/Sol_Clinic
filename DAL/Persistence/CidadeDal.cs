@@ -14,10 +14,11 @@ namespace DAL.Persistence
             try
             {
 
-                var sql = "INSERT INTO cidade(descricao, dtCadastro)" +
-                          "VALUES(@descricao, CURRENT_TIMESTAMP())";
+                var sql = "INSERT INTO cidade(idEstado, descricao, dtCadastro)" +
+                          "VALUES(@idEstado, @descricao, CURRENT_TIMESTAMP())";
 
                 command = new MySqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@idEstado", cidade.IdEstado);
                 command.Parameters.AddWithValue("@descricao", cidade.Descricao);
 
                 command.ExecuteNonQuery();
@@ -42,8 +43,12 @@ namespace DAL.Persistence
                 command = new MySqlCommand(sql, connection);
                 dataReader = command.ExecuteReader();
 
-                List<Cidade> listaCidade = new List<Cidade>();
-                List<Estado> listaEstado = new List<Estado>();
+                DataTable dataTable = new DataTable();
+
+                dataTable.Columns.Add("idCidade");
+                dataTable.Columns.Add("cidade");
+                dataTable.Columns.Add("estado");
+                dataTable.Columns.Add("siglaEstado");
 
                 while (dataReader.Read())
                 {
@@ -55,23 +60,21 @@ namespace DAL.Persistence
                     cidade.Estado = estadoDal.PesquisarPorId(cidade.IdEstado);
                     cidade.Descricao = dataReader["Descricao"].ToString();
 
-                    listaCidade.Add(cidade);
-
-                }
-
-                DataTable dataTable = new DataTable();
-
-                dataTable.Columns.Add("idCidade");
-                dataTable.Columns.Add("cidade");
-                dataTable.Columns.Add("estado");
-                dataTable.Columns.Add("siglaEstado");
-
-                foreach(var cidade in listaCidade)
-                {
-
                     dataTable.Rows.Add(cidade.Id, cidade.Descricao, cidade.Estado.Nome, cidade.Estado.Sigla);
 
+                    //dataTable.Add(cidade);
+
                 }
+
+                //DataTable dataTable = new DataTable();
+
+
+              //  foreach(var cidade in dataTable)
+              //  {
+
+              //      dataTable.Rows.Add(cidade.Id, cidade.Descricao, cidade.Estado.Nome, cidade.Estado.Sigla);
+
+              //  }
 
                 return dataTable;
 

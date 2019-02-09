@@ -21,6 +21,12 @@
             Nome Medico
             <asp:TextBox id="nome" autocomplete="off" runat="server" CssClass="form-control" />
        </div>
+                        
+        <div class="col-sm-3">
+            Crm
+            <asp:TextBox id="crm" autocomplete="off" runat="server" CssClass="form-control" />
+       </div> 
+        
        <div class="col-sm-3">
              Especialidade
            <asp:DropDownList id="idEspecialidade" runat="server" CssClass="form-control" >

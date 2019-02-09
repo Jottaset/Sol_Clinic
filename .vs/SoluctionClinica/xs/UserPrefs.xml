@@ -1,17 +1,26 @@
 ﻿<Properties StartupConfiguration="{B62F516F-1D7C-4B00-B2AF-0B3E82616E2A}|">
   <MonoDevelop.Ide.ItemProperties.View PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="View/Pages/CidadeLista.aspx.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DAL/Persistence/PacienteDal.cs">
     <Files>
-      <File FileName="View/Pages/CidadeLista.aspx" Line="35" Column="69" />
-      <File FileName="View/Pages/CidadeLista.aspx.cs" Line="5" Column="19" />
-      <File FileName="View/Pages/CidadeLista.aspx.designer.cs" Line="15" Column="37" />
-      <File FileName="DAL/Persistence/CidadeDal.cs" Line="66" Column="49" />
+      <File FileName="View/Pages/PacienteLista.aspx" Line="25" Column="1" />
+      <File FileName="View/Pages/PacienteLista.aspx.cs" Line="24" Column="1" />
+      <File FileName="DAL/Persistence/PacienteDal.cs" Line="62" Column="1" />
+      <File FileName="DAL/Persistence/Conexao.cs" Line="57" Column="1" />
+      <File FileName="BLL/Model/Paciente.cs" Line="18" Column="1" />
+      <File FileName="DAL/Persistence/CidadeDal.cs" Line="153" Column="1" />
+      <File FileName="DAL/Persistence/EstadoDal.cs" Line="141" Column="1" />
+      <File FileName="BLL/Model/Cidade.cs" Line="15" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/aluno/Documents/soluctionclinica-master/View/Pages/MedicoLista.aspx.cs" relfile="View/Pages/MedicoLista.aspx.cs" line="13" column="1" />
+      <Breakpoint file="/Users/aluno/Documents/soluctionclinica-master/View/Pages/PacienteLista.aspx.cs" relfile="View/Pages/PacienteLista.aspx.cs" line="20" column="1" />
+      <Breakpoint file="/Users/aluno/Documents/soluctionclinica-master/DAL/Persistence/Conexao.cs" relfile="DAL/Persistence/Conexao.cs" line="35" column="1" />
+      <Breakpoint file="/Users/aluno/Documents/soluctionclinica-master/DAL/Persistence/PacienteDal.cs" relfile="DAL/Persistence/PacienteDal.cs" line="37" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
